@@ -1,0 +1,427 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+
+
+/* base styles */
+* {
+  margin: 0;
+  font-family: "Quicksand";
+  color: #333;
+}
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+.navbar {
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  /* max-width: 600px; */
+  margin: 0 auto;
+  border-bottom: 1px solid #f2f2f2;
+  justify-content: space-between;
+}
+.navbar h1 {
+  color:  #028f1e;
+}
+.navbar .links {
+  margin-left: auto;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.navbar a {
+  text-decoration: none;
+  padding: 6px;
+  margin: 0px 10px;
+}
+.navbar a:hover {
+  color: #f1356d;
+}
+.content {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 20px;
+}
+
+/* Post */
+
+.post_title, .post_content, .post_footer{
+  text-align: left;
+}
+.post_title{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.post_veracity{
+  padding: 3px 10px;
+  background-color: red;
+  border-radius: 8px;
+}
+.post_veracity>span{
+  color:white;
+  /* text-transform: uppercase; */
+  /* font-weight: bolder; */
+}
+.post_title_name{
+  text-transform: capitalize;
+}
+
+/* LOGIN */
+.login-container {
+  position: relative;
+  margin: 10% auto;
+  max-width: 340px;
+}
+
+.login-container .loginbox {
+  position: relative;
+  width: 340px !important;
+  height: auto !important;
+  padding: 0 0 20px 0;
+  -webkit-box-shadow: 0 0 14px rgba(0,0,0,.1);
+  -moz-box-shadow: 0 0 14px rgba(0,0,0,.1);
+  box-shadow: 0 0 14px rgba(0,0,0,.1);
+}
+
+.bg-white {
+  background-color: #fff !important;
+}
+
+.login-container .loginbox .loginbox-title {
+  position: relative;
+  text-align: center;
+  width: 100%;
+  height: 35px;
+  padding-top: 10px;
+  font-family: 'Lucida Sans','trebuchet MS',Arial,Helvetica;
+  font-size: 20px;
+  font-weight: normal;
+  color: #444;
+}
+
+.login-container .loginbox .loginbox-social {
+  padding: 0 10px 10px;
+  text-align: center;
+}
+
+.login-container .loginbox .loginbox-social .social-title {
+  font-size: 14px;
+  font-weight: 500;
+  color: #a9a9a9;
+  margin-top: 10px;
+}
+
+.login-container .loginbox .loginbox-social .social-buttons {
+  height: 80px;
+  padding: 15px 35px;
+  text-align: center;
+}
+
+.login-container .loginbox .loginbox-social .social-buttons .button-facebook {
+  float: left;
+  border: 2px solid #3b5998;
+  color: #3b5998;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+
+  background-color: #fff;
+}
+
+.login-container .loginbox .loginbox-social .social-buttons .button-twitter {
+  float: left;
+  border: 2px solid #29c1f6;
+  color: #29c1f6;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+
+  background-color: #fff;
+}
+
+.login-container .loginbox .loginbox-social .social-buttons .button-google  {
+  float: left;
+  border: 2px solid #ef4f1d;
+  color: #ef4f1d;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+
+  background-color: #fff;
+}
+
+.login-container .loginbox .loginbox-social .social-buttons .button-facebook i {
+  font-size: 26px;
+  line-height: 50px;
+  color:#3b5998;
+}
+
+.login-container .loginbox .loginbox-social .social-buttons .button-twitter i {
+  font-size: 26px;
+  line-height: 50px;
+  color: #29c1f6;
+}
+
+.login-container .loginbox .loginbox-social .social-buttons .button-google i {
+  font-size: 26px;
+  line-height: 50px;
+  color: #ef4f1d;
+}
+
+.login-container .loginbox .loginbox-or {
+  position: relative;
+  text-align: center;
+  height: 20px;
+}
+
+.login-container .loginbox .loginbox-or .or-line {
+  position: absolute;
+  height: 1px;
+  top: 10px;
+  left: 40px;
+  right: 40px;
+  background-color: #ccc;
+}
+
+.login-container .loginbox .loginbox-or .or {
+  position: absolute;
+  top: 0;
+  -lh-property: 0;
+  left: -webkit-calc(50% - 25px);
+  left: -moz-calc(50% - 25px);
+  left: calc(50% - 25px);
+  width: 50px;
+  height: 20px;
+  background-color: #fff;
+  color: #999;
+  margin: 0 auto;
+}
+
+.login-container .loginbox .loginbox-textbox {
+  padding: 10px 40px;
+}
+
+.login-container .loginbox .loginbox-textbox .form-control {
+  -webkit-border-radius: 3px !important;
+  -webkit-background-clip: padding-box !important;
+  -moz-border-radius: 3px !important;
+  -moz-background-clip: padding !important;
+  border-radius: 3px !important;
+  background-clip: padding-box !important;
+}
+
+.login-container .loginbox .loginbox-forgot {
+  padding-left: 40px;
+}
+
+.login-container .loginbox .loginbox-forgot a {
+  font-size: 11px;
+  color: #666;
+}
+
+.login-container .loginbox .loginbox-submit {
+  padding: 10px 40px;
+}
+
+.login-container .loginbox .loginbox-signup {
+  text-align: center;
+  padding-top: 10px;
+}
+
+.login-container .loginbox .loginbox-signup a {
+  font-size: 13px;
+  color: #666;
+}
+
+.login-container .logobox {
+  width: 340px !important;
+  height: 50px !important;
+  padding: 5px;
+  margin-top: 15px;
+  -webkit-box-shadow: 0 0 14px rgba(0,0,0,.1);
+  -moz-box-shadow: 0 0 14px rgba(0,0,0,.1);
+  box-shadow: 0 0 14px rgba(0,0,0,.1);
+  background-color: #fff;
+  text-align: left;
+}
+
+.social-buttons{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.loginbox-textbox>input{
+  width: 245px;
+}
+.loginbox-forgot{
+  text-align: left;
+}
+
+
+/* Post */
+
+.read_more_section{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.read_more_section>p{
+  margin-bottom: 0px;
+}
+
+/* PostDetails */
+
+.head_post{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.answer{
+  font-size: 50px;
+  padding: 20px 100px;
+}
+.answer>i{
+  padding: 20px;
+  border-radius: 50px;
+  cursor: pointer;
+  color:white
+}
+.answer_yes>i{
+  background-color: green;
+}
+.answer_no>i{
+  background-color: red;
+  transform: rotate(180deg);
+}
+.accuracy_section{
+  margin-top: 40px;
+}
+.vote{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.me_too{
+  background-color: #028f1e;
+  font-weight: bold;
+  padding: 5px;
+  margin-top: 20px;
+  cursor: pointer;
+}
+.wrapper_me_too:hover{
+  text-decoration: none;
+}
+.me_too>span{
+  color: white;
+}
+.comments{
+  margin-top: 10px;
+}
+.total_comments{
+  text-align: right;
+}
+.original_comment,.comment_response{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.comment_response{
+  margin-left: 65px;
+}
+.comment_response>.user_avatar>img{
+  width: 40px;
+}
+.user_avatar{
+  padding-right: 10px;
+}
+.accuracy_section{
+  text-align: left;
+}
+.accuracy_actual_vote{
+  padding: 4px 10px;
+  border-radius: 20px;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  text-transform: uppercase;
+}
+.vote_positive{
+  background-color: #028f1e;
+}
+.vote_negative{
+  background-color: red;
+}
+.change_opinion_btn{
+  margin-top: 10px;
+}
+.btn_opinion_change{
+  cursor: pointer;
+  text-decoration: underline;
+  color: #3b5998;
+}
+
+/* New Post */
+form{
+  text-align: left;
+}
+input{
+  width: 100% !important;
+  padding: 14px 10px !important;
+  margin: auto;
+}
+.prefill_input{
+  background-color: white !important;
+  cursor: auto !important;
+}
+.respost_info{
+  text-align: left;
+  margin-bottom: 20px
+}
+.title_original{
+  margin-top: 8px;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 17px;
+  color: #0088cc
+}
+
+.target_photo_input{
+  padding-top:0px !important
+}
+
+.found_targets_container{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 10px 0px 20px 0px;
+}
+
+.target_item{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  
+  .inner_img{
+  border-radius: 100px;
+  border:2px solid #028f1e;
+  width: 60px;
+  }
+  img{
+    width:60px;
+    height: 60px;
+    border-radius: 100px;
+    border:2px solid white;
+  }
+}
+
+*[disabled]{
+  background-color: #eeeeee !important;
+  cursor: default !important;
+}
