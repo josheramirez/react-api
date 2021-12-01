@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" rel="stylesheet">
+    
+    <link href="https://cdn.anychart.com/releases/8.9.0/css/anychart-ui.min.css?hcode=a0c21fc77e1449cc86299c5faa067dc4" rel="stylesheet" type="text/css">
+    <script src="https://cdn.anychart.com/releases/8.9.0/js/anychart-core.min.js?hcode=a0c21fc77e1449cc86299c5faa067dc4"></script>
+    <script src="https://cdn.anychart.com/releases/8.9.0/js/anychart-graph.min.js?hcode=a0c21fc77e1449cc86299c5faa067dc4"></script>
+    <script src="https://cdn.anychart.com/releases/8.9.0/js/anychart-exports.min.js?hcode=a0c21fc77e1449cc86299c5faa067dc4"></script>
+    <script src="https://cdn.anychart.com/releases/8.9.0/js/anychart-ui.min.js?hcode=a0c21fc77e1449cc86299c5faa067dc4"></script>
+</head>
+<style>
+    .container_canvas{
+        border: 1px solid black;
+        position: relative;
+    }
+    .node{
+        border: 1px solid black;
+        border-radius: 50px;
+        width: 30px;
+        height: 30px;
+        position: absolute;
+    }
+    html, body, #container {
+      /* width: 100%;
+      height: 100%; */
+      margin: 0;
+      padding: 0;
+    }
+    .menu{
+      border: 1px solid gray;
+      width: 500px;
+      height: 800px;
+    }
+    .wrapper{
+      display: flex;
+    }
+    .add_relation{
+      background-color: rgb(245, 245, 245);
+      border-bottom: 1px solid gray;
+    }
+    .add_relation_steps{
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      margin: 0px 10px;
+    }
+    .step{
+      width: 100px;
+      height: 150px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      border: 2px solid black;
+    }
+    .step_icon{
+      width: 60px;
+      height: 60px;
+    }
+    .step_text{
+      text-align: center;
+    }
+    .data_section{
+      margin: 10px;
+    }
+</style>
+<body>
+  <div class="wrapper">
+    <div id="container"></div>
+    <div class="menu">
+      <div class="add_relation">
+        + crear relacion
+        <div class="add_relation_steps">
+          <div class="add_step_one step">
+            <div class="step_icon"></div>
+            <div class="step_text">Con quien se relacionara?</div>
+          </div>
+          <div class="add_step_two step">
+            <div class="step_icon"></div>
+            <div class="step_text">Cual es la relacion?</div>
+          </div>
+          <div class="add_step_three step">
+            <div class="step_icon"></div>
+            <div class="step_text">Confirma la relacion</div>
+          </div>
+        </div>
+        <div class="data_section">
+          <div class="step_one_name">
+            <input type="text" id="name" placeholder="nombre de la persona"><button>ok</button>
+          </div>
+          <div class="step_two_relation">
+            <input type="text" name="" id="relation" placeholder="explica la relacion">
+            <input type="text" name="" id="resume" placeholder="frase que resuma la relacion"><button>ok</button>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+  </body>
+  <script>
+    anychart.onDocumentReady(function () {
+      // create a data set
+      var dataSet = {
+        'nodes':[
+          { 'id': "Gabriel Boric",
+            fill: {
+              src: "images/Gabriel_Boric.jpg"
+            }
+          },
+          { 'id': "Giorgio Jackson",
+            fill: {
+              src: "images/Giorgio_Jackson.jpg"
+            }
+          },
+          { 'id': "Karina Oliva",
+            fill: {
+              src: "images/Karina_Oliva.jpg"
+            }
+          },
+          { 'id': "Jose Antonio Kast",
+            fill: {
+              src: "images/Jose_Kast.jpg"
+            }
+          },
+          { 'id': "Pamela Jiles",
+            fill: {
+              src: "images/Pamela_Jiles.jpg"
+            }
+          },
+          { 'id': "Axel Kaiser",
+            fill: {
+              src: "images/Axel_Kaiser.jpg"
+            }
+          },
+          { 'id': "Diego Pardow",
+            fill: {
+              src: "images/Diego_Pardow.jpg"
+            }
+          },
+          { 'id': "Felipe Melo",
+            fill: {
+              src: "images/Felipe_Melo.jpg"
+            }
+          },
+          { 'id': "Irina Karamanos",
+            fill: {
+              src: "images/Irina_Karamanos.jpg"
+            }
+          },
+          { 'id': "Javiera Cabello",
+            fill: {
+              src: "images/Javiera_Cabello.jpg"
+            }
+          },
+          { 'id': "Javiera Martinez",
+            fill: {
+              src: "images/Javiera_Martinez.jpg"
+            }
+          },          
+          { 'id': "Johannes Kaiser",
+            fill: {
+              src: "images/Johannes_Kaiser.jpg"
+            }
+          },      
+          { 'id': "Leif Kaiser",
+            fill: {
+              src: "images/Leif_Kaiser.jpg"
+            }
+          },          
+          { 'id': "Vanessa Kaiser",
+            fill: {
+              src: "images/Vanessa_Kaiser.jpg"
+            }
+          }
+        ],
+        'edges':[
+          { "from": "Gabriel Boric", "to": "Diego Pardow" },
+          { "from": "Gabriel Boric", "to": "Felipe Melo" },
+          { "from": "Gabriel Boric", "to": "Giorgio Jackson" },
+          { "from": "Gabriel Boric", "to": "Irina Karamanos" },
+          { "from": "Gabriel Boric", "to": "Javiera Cabello" },
+          { "from": "Gabriel Boric", "to": "Javiera Martinez" },
+          { "from": "Gabriel Boric", "to": "Johannes Kaiser" },
+          { "from": "Gabriel Boric", "to": "Jose Antonio Kast" },
+          { "from": "Gabriel Boric", "to": "Karina Oliva" },
+          { "from": "Gabriel Boric", "to": "Pamela Jiles" },
+          { "from": "Johannes Kaiser", "to": "Vanessa Kaiser" },
+          { "from": "Johannes Kaiser", "to": "Axel Kaiser" },
+          { "from": "Johannes Kaiser", "to": "Leif Kaiser" },
+        ]
+      };
+      
+      var originalData;
+    
+      var firstSelectionActive = false;
+      var secondSelectionActive = false;
+      var firstNodeRelation;
+      var secondNodeRelation;
+
+      // create a chart from the loaded data
+      var chart = anychart.graph(dataSet);
+  
+      // set the title
+      chart.title("Relaciones del Usuario...");
+  
+      //access nodes
+      var nodes = chart.nodes();
+  
+      //set the size of nodes
+      nodes.normal().height(45);
+      nodes.hovered().height(45);
+      nodes.selected().height(65);
+  
+      //set the fill of nodes
+      nodes.normal().fill("#ffa000");
+      nodes.hovered().fill("white");
+      nodes.selected().fill("#ffa000");
+  
+      //set the stroke of nodes
+      nodes.normal().stroke(null);
+      nodes.hovered().stroke("#333333", 3);
+      nodes.selected().stroke("#333333", 3);
+      
+// enable the labels of nodes
+chart.nodes().labels().enabled(true);
+ 
+// configure the labels of nodes
+chart.nodes().labels().format("{%id}");
+chart.nodes().labels().fontSize(14);
+chart.nodes().labels().fontWeight(300);
+ 
+      // draw the chart
+      chart.container("container").draw();
+
+      chart.listen('click', function(e) {
+        var tag = e.domTarget.tag;
+        //IF IS NODE OR EDGE
+        if (tag) {
+          // console.log(`Clicked ${tag.type} with ID ${tag.id}`, tag);
+
+          if (tag.type === 'node') {
+            // get url from data directly
+            var url;
+            for (var i = 0; i < dataSet.nodes.length; i++) {
+              if (dataSet.nodes[i].id === tag.id) {
+                data = dataSet.nodes[i];
+                // console.log(data)
+                
+                // save as first or second node relation;
+           
+                if(firstSelectionActive){
+                  console.log('save first selection');
+                  firstNodeRelation=data;
+                  firstSelectionActive=false;
+                  secondSelectionActive=true
+                }else{
+                  if(secondSelectionActive){
+                    console.log('save second selection');
+                    secondNodeRelation=data;
+                    secondSelectionActive=false;
+                    console.log('first: ',firstNodeRelation);
+                    console.log('second: ',secondNodeRelation);
+                    addRelation(firstNodeRelation,secondNodeRelation)
+                  }
+                }
+
+                break;
+              }
+            }
+            // open url
+            // window.open(url, '_blank');
+          }
+          if (tag.type === 'edge') {
+          
+          }
+        }
+
+      });
+
+    $('.step').on('click', ()=>{
+      firstSelectionActive = true;
+
+      // ADD NODE
+      console.log('aprete paso');
+      var newData = {nodes: [], edges:[]};
+ 
+      // console.log(newData);
+      dataSet.nodes.map((node)=>{newData.nodes.push(node)})
+      dataSet.edges.map((edge)=>{newData.edges.push(edge)})
+
+      newData.nodes.push( {id: "Joshe"});
+      newData.nodes.push( {id: "Richard"});
+      newData.edges.push( {from: "Gabriel Boric", to: "Joshe"});
+      newData.edges.push( {from: "Johannes Kaiser", to: "Richard"});
+      chart.data(newData);
+    })
+
+    function addRelation(firstNode,secondNode) {
+  
+      console.log('addRelation');
+      console.log(firstNode.id);
+      console.log(secondNode.id);
+
+      var newData = {nodes: [], edges:[]};
+      dataSet.nodes.map((node)=>{newData.nodes.push(node)})
+      dataSet.edges.map((edge)=>{newData.edges.push(edge)})
+
+      console.log(newData);
+
+      // first node always must to exist, check if second exist
+      var filtro=newData.nodes.filter((node)=>{
+        return node.id === secondNode.id;
+      })
+
+      // if second exist only create relation, if not create node and realtion
+      if(filtro.length){
+        newData.edges.push( {from: firstNode.id, to: secondNode.id});
+      }else{
+        newData.nodes.push( {id:secondNode.id});
+        newData.edges.push( {from: firstNode.id, to: secondNode.id});
+      }
+      
+
+       console.log(filtro);
+
+      // newData.nodes.push( {id: "Joshe"});
+      // newData.nodes.push( {id: "Richard"});
+      // newData.edges.push( {from: "Gabriel Boric", to: "Joshe"});
+      // newData.edges.push( {from: "Johannes Kaiser", to: "Richard"});
+       chart.data(newData);
+    }
+
+  });
+  </script>
+</html>
